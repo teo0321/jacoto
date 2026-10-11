@@ -77,6 +77,23 @@ summary:focus-visible {
     color: var(--c-anchor);
 }
 
+/* Stickied (featured) games in torrent lists: a soft blue tint and a
+   stronger left bar, so they read as featured at a glance */
+.torrent_table .group.sticky,
+#torrent_table tr.group.sticky {
+    background-color: #1f272e;
+}
+
+.torrent_table .group.sticky td {
+    border-top-color: var(--c-lb1) !important;
+    border-bottom-color: var(--c-lb1) !important;
+}
+
+.torrent_table .sticky td.center:first-child:after {
+    width: 3px;
+    background-color: var(--c-fbb-c);
+}
+
 /* Headings wrap evenly instead of leaving one word alone */
 h1,
 h2,
