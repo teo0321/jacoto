@@ -97,7 +97,7 @@ summary:focus-visible {
 /* A quiet letterhead at the top of the footer: the site name in small,
    widely spaced capitals between two hairlines */
 #footer::before {
-    content: "\000047\000041\00005a\000045\00004c\00004c\000045 \000047\000041\00004d\000045\000053";
+    content: "\000047\000041\00005a\000045\00004c\00004c\000045\000020\000047\000041\00004d\000045\000053";
     order: -1;
     flex-basis: 100%;
     display: block;
