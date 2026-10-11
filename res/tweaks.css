@@ -12,6 +12,30 @@ summary:focus-visible {
     outline-offset: 2px;
 }
 
+/* Numbers line up in columns (sizes, seeders, snatches) */
+#torrent_table,
+.torrent_table,
+#torrent_details,
+#requests table,
+#bonus table {
+    font-variant-numeric: tabular-nums;
+}
+
+/* Headings wrap evenly instead of leaving one word alone */
+h1,
+h2,
+h3,
+.head {
+    text-wrap: balance;
+}
+
+/* Underlines sit below descenders */
+a,
+u,
+ins {
+    text-underline-offset: 0.18em;
+}
+
 /* Respect the system "reduce motion" setting */
 @media (prefers-reduced-motion: reduce) {
     *,
