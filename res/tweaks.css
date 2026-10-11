@@ -42,14 +42,14 @@ summary:focus-visible {
 
 /* "Who": fixed width; very long usernames end in an ellipsis */
 #torrent_table tr.colhead > td:nth-last-child(5) {
-    width: 9em;
-    min-width: 9em;
+    width: 7.5em;
+    min-width: 7.5em;
     white-space: nowrap;
 }
 
 #torrent_table tr:not(.colhead) td a[href^="user.php?id="] {
     display: inline-block;
-    max-width: 8.5em;
+    max-width: 7em;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
