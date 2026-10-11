@@ -60,6 +60,23 @@ summary:focus-visible {
     white-space: nowrap;
 }
 
+/* Featured shop/inventory items: clearly marked, still quiet */
+#shop li.item_li.featured,
+.inventory #wrapper #content .item_li.featured {
+    border-color: var(--c-fbb-c);
+    box-shadow: 0 0 0 1px var(--c-fbb-c), 0 0 18px rgba(78, 135, 181, 0.18);
+}
+
+#shop .item_li.featured:before,
+.inventory .item_li.featured:before {
+    background: var(--c-gold);
+}
+
+#shop .featured h3.center,
+.inventory #wrapper #content .item_li.featured h3.center {
+    color: var(--c-anchor);
+}
+
 /* Headings wrap evenly instead of leaving one word alone */
 h1,
 h2,
