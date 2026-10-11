@@ -94,6 +94,28 @@ summary:focus-visible {
     background-color: var(--c-fbb-c);
 }
 
+/* A quiet letterhead at the top of the footer: the site name in small,
+   widely spaced capitals between two hairlines */
+#footer::before {
+    content: "\000047\000041\00005a\000045\00004c\00004c\000045 \000047\000041\00004d\000045\000053";
+    order: -1;
+    flex-basis: 100%;
+    display: block;
+    margin-bottom: 18px;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 12px;
+    letter-spacing: 0.45em;
+    text-indent: 0.45em;
+    text-align: center;
+    color: var(--c-text-s);
+    opacity: 0.5;
+    background:
+        linear-gradient(var(--c-table-brdr), var(--c-table-brdr)) no-repeat left 0 top 6px / calc(50% - 95px) 1px,
+        linear-gradient(var(--c-table-brdr), var(--c-table-brdr)) no-repeat right 0 top 6px / calc(50% - 95px) 1px;
+    pointer-events: none;
+}
+
 /* Headings wrap evenly instead of leaving one word alone */
 h1,
 h2,
