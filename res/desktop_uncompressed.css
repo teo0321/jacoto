@@ -14,7 +14,7 @@ body {
 
 .tags a {
     /*margin-top: calc(12px * var(--p-lh) - 16px);*/
-    margin-top: 2px;
+    /* margin-top: 2px; */
     padding: 2px;}
 
 tr:hover .tags a {
@@ -22,6 +22,7 @@ tr:hover .tags a {
 #better tr.torrent.torrent_row:hover .tags a,
 #running_freeleech          tr:hover .tags a,
 #requests                   tr:hover .tags a,
+.delete_notifications       tr:hover .tags a,
 .torrent_notifications      tr:hover .tags a,
 #uploaded_table             tr:hover .tags a,
 #seeding_table              tr:hover .tags a,
@@ -92,14 +93,14 @@ input#versionunknown {
 .sidebar {
     flex-direction: column;}
 
-.box_coltags .pad li a:not([href^="torrents.php?taglist="]),
+/* .box_coltags .pad li a:not([href^="torrents.php?taglist="]),
 .group_tag >span a,
 #tags_box div a {
     opacity: .5;}
 .box_coltags .pad li:hover a:not([href^="torrents.php?taglist="]),
 .group_tag:hover >span a,
 #tags_box li:hover div a {
-    opacity: 1;}
+    opacity: 1;} */
     
 /* row hovers */
 #inbox .thin >.box.pad #messageform tr:not(.colhead):hover,
@@ -131,6 +132,8 @@ input#versionunknown {
 #tools #mastergroups table tr:not(.colhead):hover,
 #wiki .thin >table tr:not(.colhead):hover,
 #wiki .thin form:only-child table tr:not(.colhead):hover, /* wiki Revision history */
+#torrents .delete_notifications table.border tr:not(.colhead):hover,
+#torrents .delete_notifications table.border tr:not(.colhead):hover .noticon +td #groupplatform a,
 #torrents .torrent_notifications table.border tr:not(.colhead):hover,
 #torrents .torrent_notifications table.border tr:not(.colhead):hover .noticon +td #groupplatform a, /* shared class/id mess */
 .thin.torrent_history >form#torrent_history_search ~table tr:not(.colhead):hover,
@@ -207,8 +210,7 @@ input#versionunknown {
     width: unset;
     height: unset;
     display: inherit;} */
-    
-    
+
 #newthreadpreview .forum_post .colhead_dark span[style="float: left;"] a[href="#newthreadpreview"],
 #quickreplypreview .colhead_dark span:not(#barpreview) a[href="#postpreview"],
 .forum_post .colhead_dark a.post_id {
@@ -303,6 +305,8 @@ input#versionunknown {
 .group_torrent td:first-child:has(strong[class$="freeleech_label"]):has(#trumpable_tag):has([id^="color_"]),
 .group_torrent td:first-child:has(strong[class$="freeleech_label"]):has(.trumpable_label):has([id^="color_"]) {
     padding-left: 9px;}
+#group_nofo_bigdiv .head:has(+.body[style="display: block;"]) >a#group_quick_edit:hover {
+    background: linear-gradient(to bottom, var(--c-tgroup) 0%, var(--c-box) 100%);}
 
 
 
@@ -399,6 +403,7 @@ input#versionunknown {
     margin: 0 auto;
     padding: 2px 0;
     display: flex;}
+.ost_groups li a,
 .tag_autocomplete >.tag_autocomplete_items div,
 #header #searchbars ul li {
     width: 100%;
@@ -642,19 +647,17 @@ input#versionunknown {
     box-shadow: inset 0 -2px 0px 0px var(--c-em-hvr);}
 #header li[id="notilia nav_notifications"].active strong:before {
     content: none;}*/
-.tag_autocomplete >.tag_autocomplete_items div,
+/* .tag_autocomplete >.tag_autocomplete_items div,
 #header #searchbars .autocomplete_list .highlight {
     color: var(--c-anchor);
-    /* -webkit-box-shadow: unset; */
     box-shadow: unset;}
 .tag_autocomplete >.tag_autocomplete_items .tag_autocomplete_active:hover,
 .tag_autocomplete >.tag_autocomplete_items div:hover,
 #header #searchbars .autocomplete_list .highlight:hover,
 #header .highlight:hover,
-/* #header li[id="notilia nav_notifications"]:hover strong, */
 #header .notificationsico:hover .newnoti,
 #header .deltornotifsico:hover .newnoti {
-    color: var(--c-anchor-hvr);}
+    color: var(--c-anchor-hvr);} */
     
 #header #userinfo_stats:before {
     -webkit-clip-path: polygon(
@@ -804,6 +807,10 @@ input#versionunknown {
 */
 #nav_useredit a:hover {
     background-color: var(--c-anchor-hvr);}
+.torrent_table .addbookmark:hover {
+    background: var(--c-on);}
+.collections_art_display .remove_bookmark_div:hover,
+.torrent_table .removebookmark:hover,
 #nav_logout a:hover {
     background-color: var(--c-off);}
 #nav_donate a:hover {
@@ -943,6 +950,12 @@ input#versionunknown {
 
 
 @media (min-width: 1300px) {
+    #shop_search tbody:not(#advanced_search) input[type="submit"] +input[type="submit"] {
+        margin: 0 10px 0 3px;}
+    .inventory #shop_search #search_query {
+        margin: 0;
+        width: calc(100% - 425px);}
+    #shop_search tbody:not(#advanced_search) td[colspan="2"] ~td,
     #forums .forum_latest >.search.box.pad table#forumlist {
         white-space: nowrap;}
 }
@@ -959,7 +972,7 @@ input#versionunknown {
 @media (max-width: 1421px) {
     .torrent_details .torrent_table >tbody >.colhead_dark td:nth-child(1):after,
     .torrent_details .torrent_table >tbody >.colhead_dark td:nth-child(1):before {
-        width: 100%;}
+        width: calc(100vw - 436px);}
 }
 @media (max-width: 1280px) {
     #header #nav_userinfo a.username {
