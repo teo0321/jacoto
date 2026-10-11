@@ -21,6 +21,30 @@ summary:focus-visible {
     font-variant-numeric: tabular-nums;
 }
 
+/* Keep torrent-table columns steady when a group is expanded:
+   reserve room for the widest likely values up front */
+#torrent_table tr.colhead > td:nth-last-child(-n+3),
+.torrent_table tr.colhead > td:nth-last-child(-n+3) {
+    min-width: 3.6em;
+    white-space: nowrap;
+}
+
+#torrent_table tr.colhead > td:nth-last-child(4),
+.torrent_table tr.colhead > td:nth-last-child(4) {
+    min-width: 6.2em;
+    white-space: nowrap;
+}
+
+#torrent_table tr.colhead > td:nth-last-child(5),
+#torrent_table tr.colhead > td:nth-last-child(6) {
+    min-width: 7.5em;
+    white-space: nowrap;
+}
+
+#torrent_table tr:not(.colhead) > td:nth-last-child(-n+6) {
+    white-space: nowrap;
+}
+
 /* Headings wrap evenly instead of leaving one word alone */
 h1,
 h2,
